@@ -107,23 +107,23 @@ namespace teste1
             return produto;
         }
 
-        private Carro InstanciarCarro()
+        private void InstanciarCarroEAdicionarNoGrid()
         {
+            int i = 0;
             int ano = Convert.ToInt32(maskedTextBoxAno.Text);
             bool eAutomatico = comboBoxAutomatico.SelectedIndex == 0;
             Carro carro = new Carro(textBoxPlaca.Text, textBoxMarca.Text, textBoxModelo.Text, eAutomatico, ano);
-            return carro;
+            if (carro != null)
+            {
+                dataGridViewCarros.Rows.Insert(i, carro.placa, carro.marca, carro.modelo, comboBoxAutomatico.Text, carro.ano);
+            }
+            i++;
+            
         }
 
         private void buttonAdicionarCarro_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            Carro carro = InstanciarCarro();
-            if (carro != null)
-            {
-                dataGridViewCarros.Rows.Insert(i, carro.placa, carro.marca, carro.modelo, carro.automatico, carro.ano);
-            }
-            i++;
+            InstanciarCarroEAdicionarNoGrid();
         }
 
         /*private void Calcular1()
