@@ -58,9 +58,7 @@ namespace teste1
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            int index = 0;
-            AdicionarNaSacola(index);
-            index++;
+            AdicionarNaSacola();
         }
 
         private class Produto
@@ -78,20 +76,24 @@ namespace teste1
         }
 
 
-        private void AdicionarNaSacola(int index)
+        private void AdicionarNaSacola()
         {
+            int index = 0;
+
             try
             {
                 
                 Produto produto = CriarProduto();
                 produtos.Add(produto);
-                dataGridView1.Rows.Insert(index, produto.id, produto.quantidade, produto.preco);
+                dataGridViewProdutos.Rows.Insert(index, produto.id, produto.quantidade, produto.preco);
             }
             catch (Exception e)
             {
                 labelAviso.Text = e.Message;
                 labelAviso.ForeColor = Color.Red;
             }
+            index++;
+
             textBoxId.Clear();
             textBoxQuantidade.Clear();
             textBoxPreco.Clear();

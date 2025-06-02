@@ -46,12 +46,12 @@
             label3 = new Label();
             label4 = new Label();
             buttonAdicionar = new Button();
-            dataGridView1 = new DataGridView();
+            dataGridViewProdutos = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             qtd = new DataGridViewTextBoxColumn();
             preco = new DataGridViewTextBoxColumn();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).BeginInit();
             SuspendLayout();
             // 
             // textBoxId
@@ -204,15 +204,15 @@
             buttonAdicionar.UseVisualStyleBackColor = true;
             buttonAdicionar.Click += buttonAdicionar_Click;
             // 
-            // dataGridView1
+            // dataGridViewProdutos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, qtd, preco });
-            dataGridView1.Location = new Point(339, 79);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(343, 479);
-            dataGridView1.TabIndex = 22;
+            dataGridViewProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProdutos.Columns.AddRange(new DataGridViewColumn[] { ID, qtd, preco });
+            dataGridViewProdutos.Location = new Point(339, 79);
+            dataGridViewProdutos.Name = "dataGridViewProdutos";
+            dataGridViewProdutos.ReadOnly = true;
+            dataGridViewProdutos.Size = new Size(343, 479);
+            dataGridViewProdutos.TabIndex = 22;
             // 
             // ID
             // 
@@ -238,7 +238,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(782, 603);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewProdutos);
             Controls.Add(buttonAdicionar);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -257,7 +257,7 @@
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -281,7 +281,7 @@
         private Label label4;
         private Button buttonAdicionar;
         private ListView listView1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewProdutos;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn qtd;
         private DataGridViewTextBoxColumn preco;
