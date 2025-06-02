@@ -46,8 +46,12 @@
             label3 = new Label();
             label4 = new Label();
             buttonAdicionar = new Button();
-            listBox1 = new ListBox();
+            dataGridView1 = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            qtd = new DataGridViewTextBoxColumn();
+            preco = new DataGridViewTextBoxColumn();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // textBoxId
@@ -55,7 +59,7 @@
             textBoxId.BorderStyle = BorderStyle.FixedSingle;
             textBoxId.Font = new Font("Segoe UI", 11F);
             textBoxId.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxId.Location = new Point(101, 140);
+            textBoxId.Location = new Point(93, 97);
             textBoxId.Name = "textBoxId";
             textBoxId.Size = new Size(76, 27);
             textBoxId.TabIndex = 1;
@@ -66,26 +70,28 @@
             textBoxPreco.BorderStyle = BorderStyle.FixedSingle;
             textBoxPreco.Font = new Font("Segoe UI", 11F);
             textBoxPreco.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxPreco.Location = new Point(237, 140);
+            textBoxPreco.Location = new Point(229, 97);
             textBoxPreco.Name = "textBoxPreco";
             textBoxPreco.Size = new Size(104, 27);
-            textBoxPreco.TabIndex = 2;
+            textBoxPreco.TabIndex = 3;
             // 
             // textBoxTotal
             // 
             textBoxTotal.BorderStyle = BorderStyle.FixedSingle;
             textBoxTotal.Font = new Font("Segoe UI", 11F);
             textBoxTotal.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxTotal.Location = new Point(183, 228);
+            textBoxTotal.Location = new Point(175, 185);
             textBoxTotal.Name = "textBoxTotal";
+            textBoxTotal.PlaceholderText = "TOTAL";
+            textBoxTotal.ReadOnly = true;
             textBoxTotal.Size = new Size(158, 27);
-            textBoxTotal.TabIndex = 3;
+            textBoxTotal.TabIndex = 4;
             // 
             // labelAviso
             // 
             labelAviso.AutoSize = true;
             labelAviso.ForeColor = Color.FromArgb(64, 64, 64);
-            labelAviso.Location = new Point(100, 294);
+            labelAviso.Location = new Point(38, 231);
             labelAviso.Name = "labelAviso";
             labelAviso.Size = new Size(50, 15);
             labelAviso.TabIndex = 4;
@@ -94,7 +100,7 @@
             // buttonCalcular
             // 
             buttonCalcular.BackColor = SystemColors.Control;
-            buttonCalcular.Location = new Point(100, 216);
+            buttonCalcular.Location = new Point(92, 173);
             buttonCalcular.Name = "buttonCalcular";
             buttonCalcular.Size = new Size(76, 39);
             buttonCalcular.TabIndex = 5;
@@ -112,7 +118,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { aRQUIVOToolStripMenuItem, eDITARToolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1884, 24);
+            menuStrip1.Size = new Size(782, 24);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -147,15 +153,15 @@
             textBoxQuantidade.BorderStyle = BorderStyle.FixedSingle;
             textBoxQuantidade.Font = new Font("Segoe UI", 11F);
             textBoxQuantidade.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxQuantidade.Location = new Point(183, 140);
+            textBoxQuantidade.Location = new Point(175, 97);
             textBoxQuantidade.Name = "textBoxQuantidade";
             textBoxQuantidade.Size = new Size(48, 27);
-            textBoxQuantidade.TabIndex = 10;
+            textBoxQuantidade.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(183, 210);
+            label1.Location = new Point(175, 167);
             label1.Name = "label1";
             label1.Size = new Size(78, 15);
             label1.TabIndex = 11;
@@ -164,7 +170,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(101, 122);
+            label2.Location = new Point(93, 79);
             label2.Name = "label2";
             label2.Size = new Size(75, 15);
             label2.TabIndex = 13;
@@ -173,7 +179,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(183, 122);
+            label3.Location = new Point(175, 79);
             label3.Name = "label3";
             label3.Size = new Size(48, 15);
             label3.TabIndex = 14;
@@ -182,7 +188,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(297, 122);
+            label4.Location = new Point(289, 79);
             label4.Name = "label4";
             label4.Size = new Size(44, 15);
             label4.TabIndex = 15;
@@ -190,7 +196,7 @@
             // 
             // buttonAdicionar
             // 
-            buttonAdicionar.Location = new Point(260, 173);
+            buttonAdicionar.Location = new Point(252, 130);
             buttonAdicionar.Name = "buttonAdicionar";
             buttonAdicionar.Size = new Size(81, 29);
             buttonAdicionar.TabIndex = 17;
@@ -198,23 +204,41 @@
             buttonAdicionar.UseVisualStyleBackColor = true;
             buttonAdicionar.Click += buttonAdicionar_Click;
             // 
-            // listBox1
+            // dataGridView1
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(390, 131);
-            listBox1.MultiColumn = true;
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(507, 94);
-            listBox1.TabIndex = 20;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, qtd, preco });
+            dataGridView1.Location = new Point(339, 79);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(343, 479);
+            dataGridView1.TabIndex = 22;
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // qtd
+            // 
+            qtd.HeaderText = "Quantidade";
+            qtd.Name = "qtd";
+            qtd.ReadOnly = true;
+            // 
+            // preco
+            // 
+            preco.HeaderText = "Preco unitario";
+            preco.Name = "preco";
+            preco.ReadOnly = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(1884, 961);
-            Controls.Add(listBox1);
+            ClientSize = new Size(782, 603);
+            Controls.Add(dataGridView1);
             Controls.Add(buttonAdicionar);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -233,6 +257,7 @@
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -256,6 +281,12 @@
         private Label label4;
         private Button buttonAdicionar;
         private ListView listView1;
-        private ListBox listBox1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn qtd;
+        private DataGridViewTextBoxColumn preco;
+
+        private List<Produto> produtos = new List<Produto>();
+        
     }
 }

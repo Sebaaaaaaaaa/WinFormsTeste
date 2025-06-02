@@ -27,9 +27,9 @@ namespace teste1
         private Decimal obterPrecoTotal()
         {
             Decimal total = 0;
-            foreach (Produto p in listBox1.Items)
+            foreach (Produto p in produtos)
             {
-                total += p.getPreco() * p.getQuantidade();
+                total += p.preco * p.quantidade;
             }
             return total;
         }
@@ -58,14 +58,16 @@ namespace teste1
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            AdicionarNaSacola();
+            int index = 0;
+            AdicionarNaSacola(index);
+            index++;
         }
 
         private class Produto
         {
-            private int id { get; set; }
-            private int quantidade { get; set; }
-            private Decimal preco { get; set; }
+            public int id { get; set; }
+            public int quantidade { get; set; }
+            public Decimal preco { get; set; }
 
             public Produto(int id, int quantidade, Decimal preco)
             {
@@ -73,22 +75,17 @@ namespace teste1
                 this.quantidade = quantidade;
                 this.preco = preco;
             }
-
-            public int getQuantidade() { return quantidade; }
-            public Decimal getPreco() { return preco; }
-
-            public override string ToString()
-            {
-                return $"ID = {this.id} - QUANTIDADE = {this.quantidade} - PRECO = {this.preco}";
-            }
         }
 
-        private void AdicionarNaSacola()
+
+        private void AdicionarNaSacola(int index)
         {
             try
             {
+                
                 Produto produto = CriarProduto();
-                listBox1.Items.Add(produto);
+                produtos.Add(produto);
+                dataGridView1.Rows.Insert(index, produto.id, produto.quantidade, produto.preco);
             }
             catch (Exception e)
             {
