@@ -82,7 +82,7 @@ namespace teste1
         {
             try
             {
-                
+
                 Produto produto = CriarProduto();
                 produtos.Add(produto);
                 dataGridView1.Rows.Insert(index, produto.id, produto.quantidade, produto.preco);
@@ -107,7 +107,24 @@ namespace teste1
             return produto;
         }
 
+        private Carro InstanciarCarro()
+        {
+            int ano = Convert.ToInt32(maskedTextBoxAno.Text);
+            bool eAutomatico = comboBoxAutomatico.SelectedIndex == 0;
+            Carro carro = new Carro(textBoxPlaca.Text, textBoxMarca.Text, textBoxModelo.Text, eAutomatico, ano);
+            return carro;
+        }
 
+        private void buttonAdicionarCarro_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            Carro carro = InstanciarCarro();
+            if (carro != null)
+            {
+                dataGridViewCarros.Rows.Insert(i, carro.placa, carro.marca, carro.modelo, carro.automatico, carro.ano);
+            }
+            i++;
+        }
 
         /*private void Calcular1()
         {

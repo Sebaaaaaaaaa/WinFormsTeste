@@ -50,8 +50,24 @@
             ID = new DataGridViewTextBoxColumn();
             qtd = new DataGridViewTextBoxColumn();
             preco = new DataGridViewTextBoxColumn();
+            dataGridViewCarros = new DataGridView();
+            Placa = new DataGridViewTextBoxColumn();
+            Marca = new DataGridViewTextBoxColumn();
+            Modelo = new DataGridViewTextBoxColumn();
+            Automatico = new DataGridViewTextBoxColumn();
+            Ano = new DataGridViewTextBoxColumn();
+            textBoxMarca = new TextBox();
+            textBoxModelo = new TextBox();
+            comboBoxAutomatico = new ComboBox();
+            maskedTextBoxAno = new MaskedTextBox();
+            label7 = new Label();
+            label6 = new Label();
+            textBoxPlaca = new TextBox();
+            buttonAdicionarCarro = new Button();
+            label5 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCarros).BeginInit();
             SuspendLayout();
             // 
             // textBoxId
@@ -211,7 +227,7 @@
             dataGridView1.Location = new Point(339, 79);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(343, 479);
+            dataGridView1.Size = new Size(343, 167);
             dataGridView1.TabIndex = 22;
             // 
             // ID
@@ -232,12 +248,149 @@
             preco.Name = "preco";
             preco.ReadOnly = true;
             // 
+            // dataGridViewCarros
+            // 
+            dataGridViewCarros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCarros.Columns.AddRange(new DataGridViewColumn[] { Placa, Marca, Modelo, Automatico, Ano });
+            dataGridViewCarros.Location = new Point(110, 400);
+            dataGridViewCarros.Name = "dataGridViewCarros";
+            dataGridViewCarros.ReadOnly = true;
+            dataGridViewCarros.Size = new Size(561, 167);
+            dataGridViewCarros.TabIndex = 24;
+            // 
+            // Placa
+            // 
+            Placa.HeaderText = "Placa";
+            Placa.Name = "Placa";
+            Placa.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            Marca.HeaderText = "Marca";
+            Marca.Name = "Marca";
+            Marca.ReadOnly = true;
+            // 
+            // Modelo
+            // 
+            Modelo.HeaderText = "Modelo";
+            Modelo.Name = "Modelo";
+            Modelo.ReadOnly = true;
+            // 
+            // Automatico
+            // 
+            Automatico.HeaderText = "E Automatico?";
+            Automatico.Name = "Automatico";
+            Automatico.ReadOnly = true;
+            Automatico.Width = 110;
+            // 
+            // Ano
+            // 
+            Ano.HeaderText = "Ano";
+            Ano.Name = "Ano";
+            Ano.ReadOnly = true;
+            // 
+            // textBoxMarca
+            // 
+            textBoxMarca.Font = new Font("Segoe UI", 11F);
+            textBoxMarca.ForeColor = Color.FromArgb(64, 64, 64);
+            textBoxMarca.Location = new Point(216, 335);
+            textBoxMarca.Name = "textBoxMarca";
+            textBoxMarca.PlaceholderText = "Marca";
+            textBoxMarca.Size = new Size(100, 27);
+            textBoxMarca.TabIndex = 29;
+            // 
+            // textBoxModelo
+            // 
+            textBoxModelo.Font = new Font("Segoe UI", 11F);
+            textBoxModelo.ForeColor = Color.FromArgb(64, 64, 64);
+            textBoxModelo.Location = new Point(322, 335);
+            textBoxModelo.Name = "textBoxModelo";
+            textBoxModelo.PlaceholderText = "Modelo";
+            textBoxModelo.Size = new Size(100, 27);
+            textBoxModelo.TabIndex = 30;
+            // 
+            // comboBoxAutomatico
+            // 
+            comboBoxAutomatico.FormattingEnabled = true;
+            comboBoxAutomatico.Items.AddRange(new object[] { "Sim", "Nao" });
+            comboBoxAutomatico.Location = new Point(428, 335);
+            comboBoxAutomatico.Name = "comboBoxAutomatico";
+            comboBoxAutomatico.Size = new Size(105, 23);
+            comboBoxAutomatico.TabIndex = 32;
+            // 
+            // maskedTextBoxAno
+            // 
+            maskedTextBoxAno.Location = new Point(539, 335);
+            maskedTextBoxAno.Mask = "0000";
+            maskedTextBoxAno.Name = "maskedTextBoxAno";
+            maskedTextBoxAno.Size = new Size(100, 23);
+            maskedTextBoxAno.TabIndex = 34;
+            maskedTextBoxAno.ValidatingType = typeof(int);
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(539, 317);
+            label7.Name = "label7";
+            label7.Size = new Size(29, 15);
+            label7.TabIndex = 35;
+            label7.Text = "Ano";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(110, 307);
+            label6.Name = "label6";
+            label6.Size = new Size(149, 25);
+            label6.TabIndex = 37;
+            label6.Text = "INPUT CARROS";
+            // 
+            // textBoxPlaca
+            // 
+            textBoxPlaca.Font = new Font("Segoe UI", 11F);
+            textBoxPlaca.ForeColor = Color.FromArgb(64, 64, 64);
+            textBoxPlaca.Location = new Point(110, 335);
+            textBoxPlaca.Name = "textBoxPlaca";
+            textBoxPlaca.PlaceholderText = "Placa";
+            textBoxPlaca.Size = new Size(100, 27);
+            textBoxPlaca.TabIndex = 38;
+            // 
+            // buttonAdicionarCarro
+            // 
+            buttonAdicionarCarro.Location = new Point(645, 335);
+            buttonAdicionarCarro.Name = "buttonAdicionarCarro";
+            buttonAdicionarCarro.Size = new Size(81, 43);
+            buttonAdicionarCarro.TabIndex = 40;
+            buttonAdicionarCarro.Text = "ADICIONAR CARRO";
+            buttonAdicionarCarro.UseVisualStyleBackColor = true;
+            buttonAdicionarCarro.Click += buttonAdicionarCarro_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(428, 317);
+            label5.Name = "label5";
+            label5.Size = new Size(82, 15);
+            label5.TabIndex = 42;
+            label5.Text = "E automatico?";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(782, 603);
+            Controls.Add(label5);
+            Controls.Add(buttonAdicionarCarro);
+            Controls.Add(textBoxPlaca);
+            Controls.Add(label6);
+            Controls.Add(label7);
+            Controls.Add(maskedTextBoxAno);
+            Controls.Add(comboBoxAutomatico);
+            Controls.Add(textBoxModelo);
+            Controls.Add(textBoxMarca);
+            Controls.Add(dataGridViewCarros);
             Controls.Add(dataGridView1);
             Controls.Add(buttonAdicionar);
             Controls.Add(label4);
@@ -258,6 +411,7 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCarros).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -287,6 +441,20 @@
         private DataGridViewTextBoxColumn preco;
 
         private List<Produto> produtos = new List<Produto>();
-        
+        private DataGridView dataGridViewCarros;
+        private DataGridViewTextBoxColumn Placa;
+        private DataGridViewTextBoxColumn Marca;
+        private DataGridViewTextBoxColumn Modelo;
+        private DataGridViewTextBoxColumn Automatico;
+        private DataGridViewTextBoxColumn Ano;
+        private TextBox textBoxMarca;
+        private TextBox textBoxModelo;
+        private ComboBox comboBoxAutomatico;
+        private MaskedTextBox maskedTextBoxAno;
+        private Label label7;
+        private Label label6;
+        private TextBox textBoxPlaca;
+        private Button buttonAdicionarCarro;
+        private Label label5;
     }
 }
