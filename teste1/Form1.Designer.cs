@@ -29,27 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            textBoxId = new TextBox();
-            textBoxPreco = new TextBox();
-            textBoxTotal = new TextBox();
-            labelAviso = new Label();
-            buttonCalcular = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             menuStrip1 = new MenuStrip();
             aRQUIVOToolStripMenuItem = new ToolStripMenuItem();
             editarToolStripMenuItem = new ToolStripMenuItem();
             salvarToolStripMenuItem = new ToolStripMenuItem();
             eDITARToolStripMenuItem1 = new ToolStripMenuItem();
-            textBoxQuantidade = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            buttonAdicionar = new Button();
-            dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            qtd = new DataGridViewTextBoxColumn();
-            preco = new DataGridViewTextBoxColumn();
             dataGridViewCarros = new DataGridView();
             Placa = new DataGridViewTextBoxColumn();
             Marca = new DataGridViewTextBoxColumn();
@@ -65,64 +50,10 @@
             textBoxPlaca = new TextBox();
             buttonAdicionarCarro = new Button();
             label5 = new Label();
+            labelAviso = new Label();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCarros).BeginInit();
             SuspendLayout();
-            // 
-            // textBoxId
-            // 
-            textBoxId.BorderStyle = BorderStyle.FixedSingle;
-            textBoxId.Font = new Font("Segoe UI", 11F);
-            textBoxId.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxId.Location = new Point(93, 97);
-            textBoxId.Name = "textBoxId";
-            textBoxId.Size = new Size(76, 27);
-            textBoxId.TabIndex = 1;
-            textBoxId.Tag = "";
-            // 
-            // textBoxPreco
-            // 
-            textBoxPreco.BorderStyle = BorderStyle.FixedSingle;
-            textBoxPreco.Font = new Font("Segoe UI", 11F);
-            textBoxPreco.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxPreco.Location = new Point(229, 97);
-            textBoxPreco.Name = "textBoxPreco";
-            textBoxPreco.Size = new Size(104, 27);
-            textBoxPreco.TabIndex = 3;
-            // 
-            // textBoxTotal
-            // 
-            textBoxTotal.BorderStyle = BorderStyle.FixedSingle;
-            textBoxTotal.Font = new Font("Segoe UI", 11F);
-            textBoxTotal.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxTotal.Location = new Point(175, 185);
-            textBoxTotal.Name = "textBoxTotal";
-            textBoxTotal.PlaceholderText = "TOTAL";
-            textBoxTotal.ReadOnly = true;
-            textBoxTotal.Size = new Size(158, 27);
-            textBoxTotal.TabIndex = 4;
-            // 
-            // labelAviso
-            // 
-            labelAviso.AutoSize = true;
-            labelAviso.ForeColor = Color.FromArgb(64, 64, 64);
-            labelAviso.Location = new Point(38, 231);
-            labelAviso.Name = "labelAviso";
-            labelAviso.Size = new Size(50, 15);
-            labelAviso.TabIndex = 4;
-            labelAviso.Text = "Avisos...";
-            // 
-            // buttonCalcular
-            // 
-            buttonCalcular.BackColor = SystemColors.Control;
-            buttonCalcular.Location = new Point(92, 173);
-            buttonCalcular.Name = "buttonCalcular";
-            buttonCalcular.Size = new Size(76, 39);
-            buttonCalcular.TabIndex = 5;
-            buttonCalcular.Text = "FECHAR COMPRA";
-            buttonCalcular.UseVisualStyleBackColor = false;
-            buttonCalcular.Click += buttonCalcular_Click;
             // 
             // contextMenuStrip1
             // 
@@ -148,13 +79,13 @@
             // editarToolStripMenuItem
             // 
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(105, 22);
+            editarToolStripMenuItem.Size = new Size(180, 22);
             editarToolStripMenuItem.Text = "Editar";
             // 
             // salvarToolStripMenuItem
             // 
             salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            salvarToolStripMenuItem.Size = new Size(105, 22);
+            salvarToolStripMenuItem.Size = new Size(180, 22);
             salvarToolStripMenuItem.Text = "Salvar";
             // 
             // eDITARToolStripMenuItem1
@@ -163,96 +94,11 @@
             eDITARToolStripMenuItem1.Size = new Size(57, 20);
             eDITARToolStripMenuItem1.Text = "EDITAR";
             // 
-            // textBoxQuantidade
-            // 
-            textBoxQuantidade.AcceptsTab = true;
-            textBoxQuantidade.BorderStyle = BorderStyle.FixedSingle;
-            textBoxQuantidade.Font = new Font("Segoe UI", 11F);
-            textBoxQuantidade.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxQuantidade.Location = new Point(175, 97);
-            textBoxQuantidade.Name = "textBoxQuantidade";
-            textBoxQuantidade.Size = new Size(48, 27);
-            textBoxQuantidade.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(175, 167);
-            label1.Name = "label1";
-            label1.Size = new Size(78, 15);
-            label1.TabIndex = 11;
-            label1.Text = "Valor a pagar:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(93, 79);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 15);
-            label2.TabIndex = 13;
-            label2.Text = "ID PRODUTO";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(175, 79);
-            label3.Name = "label3";
-            label3.Size = new Size(48, 15);
-            label3.TabIndex = 14;
-            label3.Text = "QUANT";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(289, 79);
-            label4.Name = "label4";
-            label4.Size = new Size(44, 15);
-            label4.TabIndex = 15;
-            label4.Text = "PREÇO";
-            // 
-            // buttonAdicionar
-            // 
-            buttonAdicionar.Location = new Point(252, 130);
-            buttonAdicionar.Name = "buttonAdicionar";
-            buttonAdicionar.Size = new Size(81, 29);
-            buttonAdicionar.TabIndex = 17;
-            buttonAdicionar.Text = "ADICIONAR";
-            buttonAdicionar.UseVisualStyleBackColor = true;
-            buttonAdicionar.Click += buttonAdicionar_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, qtd, preco });
-            dataGridView1.Location = new Point(339, 79);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(343, 167);
-            dataGridView1.TabIndex = 22;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // qtd
-            // 
-            qtd.HeaderText = "Quantidade";
-            qtd.Name = "qtd";
-            qtd.ReadOnly = true;
-            // 
-            // preco
-            // 
-            preco.HeaderText = "Preco unitario";
-            preco.Name = "preco";
-            preco.ReadOnly = true;
-            // 
             // dataGridViewCarros
             // 
             dataGridViewCarros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCarros.Columns.AddRange(new DataGridViewColumn[] { Placa, Marca, Modelo, Automatico, Ano });
-            dataGridViewCarros.Location = new Point(110, 400);
+            dataGridViewCarros.Location = new Point(86, 161);
             dataGridViewCarros.Name = "dataGridViewCarros";
             dataGridViewCarros.ReadOnly = true;
             dataGridViewCarros.Size = new Size(561, 167);
@@ -293,7 +139,7 @@
             // 
             textBoxMarca.Font = new Font("Segoe UI", 11F);
             textBoxMarca.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxMarca.Location = new Point(216, 335);
+            textBoxMarca.Location = new Point(192, 96);
             textBoxMarca.Name = "textBoxMarca";
             textBoxMarca.PlaceholderText = "Marca";
             textBoxMarca.Size = new Size(100, 27);
@@ -303,7 +149,7 @@
             // 
             textBoxModelo.Font = new Font("Segoe UI", 11F);
             textBoxModelo.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxModelo.Location = new Point(322, 335);
+            textBoxModelo.Location = new Point(298, 96);
             textBoxModelo.Name = "textBoxModelo";
             textBoxModelo.PlaceholderText = "Modelo";
             textBoxModelo.Size = new Size(100, 27);
@@ -313,14 +159,14 @@
             // 
             comboBoxAutomatico.FormattingEnabled = true;
             comboBoxAutomatico.Items.AddRange(new object[] { "Sim", "Nao" });
-            comboBoxAutomatico.Location = new Point(428, 335);
+            comboBoxAutomatico.Location = new Point(404, 96);
             comboBoxAutomatico.Name = "comboBoxAutomatico";
             comboBoxAutomatico.Size = new Size(105, 23);
             comboBoxAutomatico.TabIndex = 32;
             // 
             // maskedTextBoxAno
             // 
-            maskedTextBoxAno.Location = new Point(539, 335);
+            maskedTextBoxAno.Location = new Point(515, 96);
             maskedTextBoxAno.Mask = "0000";
             maskedTextBoxAno.Name = "maskedTextBoxAno";
             maskedTextBoxAno.Size = new Size(100, 23);
@@ -330,7 +176,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(539, 317);
+            label7.Location = new Point(515, 78);
             label7.Name = "label7";
             label7.Size = new Size(29, 15);
             label7.TabIndex = 35;
@@ -340,7 +186,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(110, 307);
+            label6.Location = new Point(86, 68);
             label6.Name = "label6";
             label6.Size = new Size(149, 25);
             label6.TabIndex = 37;
@@ -350,7 +196,7 @@
             // 
             textBoxPlaca.Font = new Font("Segoe UI", 11F);
             textBoxPlaca.ForeColor = Color.FromArgb(64, 64, 64);
-            textBoxPlaca.Location = new Point(110, 335);
+            textBoxPlaca.Location = new Point(86, 96);
             textBoxPlaca.Name = "textBoxPlaca";
             textBoxPlaca.PlaceholderText = "Placa";
             textBoxPlaca.Size = new Size(100, 27);
@@ -358,7 +204,7 @@
             // 
             // buttonAdicionarCarro
             // 
-            buttonAdicionarCarro.Location = new Point(645, 335);
+            buttonAdicionarCarro.Location = new Point(621, 96);
             buttonAdicionarCarro.Name = "buttonAdicionarCarro";
             buttonAdicionarCarro.Size = new Size(81, 43);
             buttonAdicionarCarro.TabIndex = 40;
@@ -369,11 +215,20 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(428, 317);
+            label5.Location = new Point(404, 78);
             label5.Name = "label5";
             label5.Size = new Size(82, 15);
             label5.TabIndex = 42;
             label5.Text = "E automatico?";
+            // 
+            // labelAviso
+            // 
+            labelAviso.AutoSize = true;
+            labelAviso.Location = new Point(86, 126);
+            labelAviso.Name = "labelAviso";
+            labelAviso.Size = new Size(10, 15);
+            labelAviso.TabIndex = 44;
+            labelAviso.Text = ".";
             // 
             // Form1
             // 
@@ -381,6 +236,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(782, 603);
+            Controls.Add(labelAviso);
             Controls.Add(label5);
             Controls.Add(buttonAdicionarCarro);
             Controls.Add(textBoxPlaca);
@@ -391,56 +247,27 @@
             Controls.Add(textBoxModelo);
             Controls.Add(textBoxMarca);
             Controls.Add(dataGridViewCarros);
-            Controls.Add(dataGridView1);
-            Controls.Add(buttonAdicionar);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBoxQuantidade);
             Controls.Add(menuStrip1);
-            Controls.Add(buttonCalcular);
-            Controls.Add(labelAviso);
-            Controls.Add(textBoxTotal);
-            Controls.Add(textBoxPreco);
-            Controls.Add(textBoxId);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCarros).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox textBoxId;
-        private TextBox textBoxPreco;
-        private TextBox textBoxTotal;
-        private Label labelAviso;
-        private Button buttonCalcular;
         private ContextMenuStrip contextMenuStrip1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem aRQUIVOToolStripMenuItem;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem salvarToolStripMenuItem;
         private ToolStripMenuItem eDITARToolStripMenuItem1;
-        private TextBox textBoxQuantidade;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Button buttonAdicionar;
         private ListView listView1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn qtd;
-        private DataGridViewTextBoxColumn preco;
 
-        private List<Produto> produtos = new List<Produto>();
         private DataGridView dataGridViewCarros;
         private DataGridViewTextBoxColumn Placa;
         private DataGridViewTextBoxColumn Marca;
@@ -456,5 +283,6 @@
         private TextBox textBoxPlaca;
         private Button buttonAdicionarCarro;
         private Label label5;
+        private Label labelAviso;
     }
 }

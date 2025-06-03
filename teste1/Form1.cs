@@ -1,37 +1,16 @@
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+
 namespace teste1
 {
     public partial class Form1 : Form
     {
+        private const string ERRO_CAMPO_VAZIO = "Os campos não podem ficar vazios";
+        private const string CADASTRO_SUCESO = "Carro cadastrado com suceso";
+
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void buttonCalcular_Click(object sender, EventArgs e)
-        {
-            CalcularPrecoTotal();
-        }
-
-        private void CalcularPrecoTotal()
-        {
-            try
-            {
-                textBoxTotal.Text = obterPrecoTotal().ToString("C2", System.Globalization.CultureInfo.CurrentCulture);
-            }
-            catch (Exception e)
-            {
-
-            }
-        }
-
-        private Decimal obterPrecoTotal()
-        {
-            Decimal total = 0;
-            foreach (Produto p in produtos)
-            {
-                total += p.preco * p.quantidade;
-            }
-            return total;
         }
 
         //private void CalcularTotalProdutos()
@@ -55,70 +34,42 @@ namespace teste1
         //    }
 
         //}
-
-        private void buttonAdicionar_Click(object sender, EventArgs e)
-        {
-            int index = 0;
-            AdicionarNaSacola(index);
-            index++;
-        }
-
-        private class Produto
-        {
-            public int id { get; set; }
-            public int quantidade { get; set; }
-            public Decimal preco { get; set; }
-
-            public Produto(int id, int quantidade, Decimal preco)
-            {
-                this.id = id;
-                this.quantidade = quantidade;
-                this.preco = preco;
-            }
-        }
-
-
-        private void AdicionarNaSacola(int index)
+        private void InstanciarCarroEAdicionarNoGrid()
         {
             try
             {
-
-                Produto produto = CriarProduto();
-                produtos.Add(produto);
-                dataGridView1.Rows.Insert(index, produto.id, produto.quantidade, produto.preco);
+                int i = 0;
+                if (ValidarCarro())
+                {
+                    bool eAutomatico = comboBoxAutomatico.SelectedIndex == 0;
+                    int ano = Convert.ToInt32(maskedTextBoxAno.Text);
+                    Carro carro = new Carro(textBoxPlaca.Text, textBoxMarca.Text, textBoxModelo.Text, eAutomatico, ano);
+                    dataGridViewCarros.Rows.Insert(i, carro.placa, carro.marca, carro.modelo, comboBoxAutomatico.Text, carro.ano);
+                    MessageBox.Show(CADASTRO_SUCESO, "SUCESO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    labelAviso.Text = ".";
+                }
+                i++;
             }
             catch (Exception e)
             {
-                labelAviso.Text = e.Message;
-                labelAviso.ForeColor = Color.Red;
+                MessageBox.Show("Erro: " + e.Message, "ERRO", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             }
-            textBoxId.Clear();
-            textBoxQuantidade.Clear();
-            textBoxPreco.Clear();
         }
 
-        private Produto CriarProduto()
+        private bool ValidarCarro()
         {
-            int id = Convert.ToInt32(textBoxId.Text);
-            int quantidade = Convert.ToInt32(textBoxQuantidade.Text);
-            Decimal preco = Convert.ToDecimal(textBoxPreco.Text);
-            Produto produto = new Produto(id, quantidade, preco);
-
-            return produto;
-        }
-
-        private void InstanciarCarroEAdicionarNoGrid()
-        {
-            int i = 0;
-            int ano = Convert.ToInt32(maskedTextBoxAno.Text);
-            bool eAutomatico = comboBoxAutomatico.SelectedIndex == 0;
-            Carro carro = new Carro(textBoxPlaca.Text, textBoxMarca.Text, textBoxModelo.Text, eAutomatico, ano);
-            if (carro != null)
+            bool result = false;
+            if (string.IsNullOrEmpty(textBoxPlaca.Text) || string.IsNullOrEmpty(textBoxMarca.Text) || string.IsNullOrEmpty(textBoxModelo.Text)
+                || comboBoxAutomatico.SelectedIndex < 0 || string.IsNullOrEmpty(maskedTextBoxAno.Text))
             {
-                dataGridViewCarros.Rows.Insert(i, carro.placa, carro.marca, carro.modelo, comboBoxAutomatico.Text, carro.ano);
+                labelAviso.Text = ERRO_CAMPO_VAZIO;
+                MessageBox.Show(ERRO_CAMPO_VAZIO, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            i++;
-            
+            else
+            {
+                result = true;
+            }
+                return result;
         }
 
         private void buttonAdicionarCarro_Click(object sender, EventArgs e)
