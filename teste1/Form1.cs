@@ -7,6 +7,7 @@ namespace teste1
     {
         private const string ERRO_CAMPO_VAZIO = "Os campos não podem ficar vazios";
         private const string CADASTRO_SUCESO = "Carro cadastrado com suceso";
+        private const string VALOR_AUTOMATICO_INVALIDO = "Selecione um valor valido";
 
         public Form1()
         {
@@ -44,11 +45,12 @@ namespace teste1
                     bool eAutomatico = comboBoxAutomatico.SelectedIndex == 0;
                     int ano = Convert.ToInt32(maskedTextBoxAno.Text);
                     Carro carro = new Carro(textBoxPlaca.Text, textBoxMarca.Text, textBoxModelo.Text, eAutomatico, ano);
-                    dataGridViewCarros.Rows.Insert(i, carro.placa, carro.marca, carro.modelo, comboBoxAutomatico.Text, carro.ano);
+                    dataGridViewCarros.Rows.Insert(i, i, carro.placa, carro.marca, carro.modelo, comboBoxAutomatico.Text, carro.ano);
                     MessageBox.Show(CADASTRO_SUCESO, "SUCESO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     labelAviso.Text = ".";
+                    i++;
                 }
-                i++;
+                
             }
             catch (Exception e)
             {
@@ -60,16 +62,21 @@ namespace teste1
         {
             bool result = false;
             if (string.IsNullOrEmpty(textBoxPlaca.Text) || string.IsNullOrEmpty(textBoxMarca.Text) || string.IsNullOrEmpty(textBoxModelo.Text)
-                || comboBoxAutomatico.SelectedIndex < 0 || string.IsNullOrEmpty(maskedTextBoxAno.Text))
+                || string.IsNullOrEmpty(maskedTextBoxAno.Text))
             {
                 labelAviso.Text = ERRO_CAMPO_VAZIO;
                 MessageBox.Show(ERRO_CAMPO_VAZIO, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (comboBoxAutomatico.SelectedIndex < 0)
+            {
+                labelAviso.Text = VALOR_AUTOMATICO_INVALIDO;
+                MessageBox.Show(VALOR_AUTOMATICO_INVALIDO, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 result = true;
             }
-                return result;
+            return result;
         }
 
         private void buttonAdicionarCarro_Click(object sender, EventArgs e)

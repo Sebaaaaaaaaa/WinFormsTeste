@@ -36,11 +36,6 @@
             salvarToolStripMenuItem = new ToolStripMenuItem();
             eDITARToolStripMenuItem1 = new ToolStripMenuItem();
             dataGridViewCarros = new DataGridView();
-            Placa = new DataGridViewTextBoxColumn();
-            Marca = new DataGridViewTextBoxColumn();
-            Modelo = new DataGridViewTextBoxColumn();
-            Automatico = new DataGridViewTextBoxColumn();
-            Ano = new DataGridViewTextBoxColumn();
             textBoxMarca = new TextBox();
             textBoxModelo = new TextBox();
             comboBoxAutomatico = new ComboBox();
@@ -51,6 +46,12 @@
             buttonAdicionarCarro = new Button();
             label5 = new Label();
             labelAviso = new Label();
+            Id = new DataGridViewTextBoxColumn();
+            Placa = new DataGridViewTextBoxColumn();
+            Marca = new DataGridViewTextBoxColumn();
+            Modelo = new DataGridViewTextBoxColumn();
+            Automatico = new DataGridViewTextBoxColumn();
+            Ano = new DataGridViewTextBoxColumn();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCarros).BeginInit();
             SuspendLayout();
@@ -79,13 +80,13 @@
             // editarToolStripMenuItem
             // 
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(180, 22);
+            editarToolStripMenuItem.Size = new Size(105, 22);
             editarToolStripMenuItem.Text = "Editar";
             // 
             // salvarToolStripMenuItem
             // 
             salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            salvarToolStripMenuItem.Size = new Size(180, 22);
+            salvarToolStripMenuItem.Size = new Size(105, 22);
             salvarToolStripMenuItem.Text = "Salvar";
             // 
             // eDITARToolStripMenuItem1
@@ -97,43 +98,12 @@
             // dataGridViewCarros
             // 
             dataGridViewCarros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCarros.Columns.AddRange(new DataGridViewColumn[] { Placa, Marca, Modelo, Automatico, Ano });
+            dataGridViewCarros.Columns.AddRange(new DataGridViewColumn[] { Id, Placa, Marca, Modelo, Automatico, Ano });
             dataGridViewCarros.Location = new Point(86, 161);
             dataGridViewCarros.Name = "dataGridViewCarros";
             dataGridViewCarros.ReadOnly = true;
             dataGridViewCarros.Size = new Size(561, 167);
             dataGridViewCarros.TabIndex = 24;
-            // 
-            // Placa
-            // 
-            Placa.HeaderText = "Placa";
-            Placa.Name = "Placa";
-            Placa.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            Marca.HeaderText = "Marca";
-            Marca.Name = "Marca";
-            Marca.ReadOnly = true;
-            // 
-            // Modelo
-            // 
-            Modelo.HeaderText = "Modelo";
-            Modelo.Name = "Modelo";
-            Modelo.ReadOnly = true;
-            // 
-            // Automatico
-            // 
-            Automatico.HeaderText = "E Automatico?";
-            Automatico.Name = "Automatico";
-            Automatico.ReadOnly = true;
-            Automatico.Width = 110;
-            // 
-            // Ano
-            // 
-            Ano.HeaderText = "Ano";
-            Ano.Name = "Ano";
-            Ano.ReadOnly = true;
             // 
             // textBoxMarca
             // 
@@ -158,7 +128,7 @@
             // comboBoxAutomatico
             // 
             comboBoxAutomatico.FormattingEnabled = true;
-            comboBoxAutomatico.Items.AddRange(new object[] { "Sim", "Nao" });
+            comboBoxAutomatico.Items.AddRange(new object[] { "Sim", "Nao", "Semiautomatico" });
             comboBoxAutomatico.Location = new Point(404, 96);
             comboBoxAutomatico.Name = "comboBoxAutomatico";
             comboBoxAutomatico.Size = new Size(105, 23);
@@ -230,6 +200,44 @@
             labelAviso.TabIndex = 44;
             labelAviso.Text = ".";
             // 
+            // Id
+            // 
+            Id.HeaderText = "ID";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 30;
+            // 
+            // Placa
+            // 
+            Placa.HeaderText = "Placa";
+            Placa.Name = "Placa";
+            Placa.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            Marca.HeaderText = "Marca";
+            Marca.Name = "Marca";
+            Marca.ReadOnly = true;
+            // 
+            // Modelo
+            // 
+            Modelo.HeaderText = "Modelo";
+            Modelo.Name = "Modelo";
+            Modelo.ReadOnly = true;
+            // 
+            // Automatico
+            // 
+            Automatico.HeaderText = "E Automatico?";
+            Automatico.Name = "Automatico";
+            Automatico.ReadOnly = true;
+            Automatico.Width = 110;
+            // 
+            // Ano
+            // 
+            Ano.HeaderText = "Ano";
+            Ano.Name = "Ano";
+            Ano.ReadOnly = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -251,6 +259,7 @@
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -269,11 +278,6 @@
         private ListView listView1;
 
         private DataGridView dataGridViewCarros;
-        private DataGridViewTextBoxColumn Placa;
-        private DataGridViewTextBoxColumn Marca;
-        private DataGridViewTextBoxColumn Modelo;
-        private DataGridViewTextBoxColumn Automatico;
-        private DataGridViewTextBoxColumn Ano;
         private TextBox textBoxMarca;
         private TextBox textBoxModelo;
         private ComboBox comboBoxAutomatico;
@@ -284,5 +288,11 @@
         private Button buttonAdicionarCarro;
         private Label label5;
         private Label labelAviso;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Placa;
+        private DataGridViewTextBoxColumn Marca;
+        private DataGridViewTextBoxColumn Modelo;
+        private DataGridViewTextBoxColumn Automatico;
+        private DataGridViewTextBoxColumn Ano;
     }
 }
