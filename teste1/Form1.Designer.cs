@@ -36,6 +36,12 @@
             salvarToolStripMenuItem = new ToolStripMenuItem();
             eDITARToolStripMenuItem1 = new ToolStripMenuItem();
             dataGridViewCarros = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Placa = new DataGridViewTextBoxColumn();
+            Marca = new DataGridViewTextBoxColumn();
+            Modelo = new DataGridViewTextBoxColumn();
+            Automatico = new DataGridViewTextBoxColumn();
+            Ano = new DataGridViewTextBoxColumn();
             textBoxMarca = new TextBox();
             textBoxModelo = new TextBox();
             comboBoxAutomatico = new ComboBox();
@@ -46,12 +52,6 @@
             buttonAdicionarCarro = new Button();
             label5 = new Label();
             labelAviso = new Label();
-            Id = new DataGridViewTextBoxColumn();
-            Placa = new DataGridViewTextBoxColumn();
-            Marca = new DataGridViewTextBoxColumn();
-            Modelo = new DataGridViewTextBoxColumn();
-            Automatico = new DataGridViewTextBoxColumn();
-            Ano = new DataGridViewTextBoxColumn();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCarros).BeginInit();
             SuspendLayout();
@@ -102,8 +102,46 @@
             dataGridViewCarros.Location = new Point(86, 161);
             dataGridViewCarros.Name = "dataGridViewCarros";
             dataGridViewCarros.ReadOnly = true;
-            dataGridViewCarros.Size = new Size(561, 167);
+            dataGridViewCarros.Size = new Size(585, 167);
             dataGridViewCarros.TabIndex = 24;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "ID";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 30;
+            // 
+            // Placa
+            // 
+            Placa.HeaderText = "Placa";
+            Placa.Name = "Placa";
+            Placa.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            Marca.HeaderText = "Marca";
+            Marca.Name = "Marca";
+            Marca.ReadOnly = true;
+            // 
+            // Modelo
+            // 
+            Modelo.HeaderText = "Modelo";
+            Modelo.Name = "Modelo";
+            Modelo.ReadOnly = true;
+            // 
+            // Automatico
+            // 
+            Automatico.HeaderText = "E Automatico?";
+            Automatico.Name = "Automatico";
+            Automatico.ReadOnly = true;
+            Automatico.Width = 110;
+            // 
+            // Ano
+            // 
+            Ano.HeaderText = "Ano";
+            Ano.Name = "Ano";
+            Ano.ReadOnly = true;
             // 
             // textBoxMarca
             // 
@@ -200,44 +238,6 @@
             labelAviso.TabIndex = 44;
             labelAviso.Text = ".";
             // 
-            // Id
-            // 
-            Id.HeaderText = "ID";
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 30;
-            // 
-            // Placa
-            // 
-            Placa.HeaderText = "Placa";
-            Placa.Name = "Placa";
-            Placa.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            Marca.HeaderText = "Marca";
-            Marca.Name = "Marca";
-            Marca.ReadOnly = true;
-            // 
-            // Modelo
-            // 
-            Modelo.HeaderText = "Modelo";
-            Modelo.Name = "Modelo";
-            Modelo.ReadOnly = true;
-            // 
-            // Automatico
-            // 
-            Automatico.HeaderText = "E Automatico?";
-            Automatico.Name = "Automatico";
-            Automatico.ReadOnly = true;
-            Automatico.Width = 110;
-            // 
-            // Ano
-            // 
-            Ano.HeaderText = "Ano";
-            Ano.Name = "Ano";
-            Ano.ReadOnly = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -294,5 +294,10 @@
         private DataGridViewTextBoxColumn Modelo;
         private DataGridViewTextBoxColumn Automatico;
         private DataGridViewTextBoxColumn Ano;
+
+        private int indexDataGridView = 0;
+        private int id = 1;
+
+        //private List<Carro> carros = new List<Carro>();
     }
 }

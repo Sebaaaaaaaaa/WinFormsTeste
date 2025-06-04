@@ -39,18 +39,17 @@ namespace teste1
         {
             try
             {
-                int i = 0;
                 if (ValidarCarro())
                 {
                     bool eAutomatico = comboBoxAutomatico.SelectedIndex == 0;
                     int ano = Convert.ToInt32(maskedTextBoxAno.Text);
                     Carro carro = new Carro(textBoxPlaca.Text, textBoxMarca.Text, textBoxModelo.Text, eAutomatico, ano);
-                    dataGridViewCarros.Rows.Insert(i, i, carro.placa, carro.marca, carro.modelo, comboBoxAutomatico.Text, carro.ano);
+                    dataGridViewCarros.Rows.Insert(indexDataGridView, id, carro.placa, carro.marca, carro.modelo, comboBoxAutomatico.Text, carro.ano);
                     MessageBox.Show(CADASTRO_SUCESO, "SUCESO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     labelAviso.Text = ".";
-                    i++;
+                    indexDataGridView++;
+                    id++;
                 }
-                
             }
             catch (Exception e)
             {
