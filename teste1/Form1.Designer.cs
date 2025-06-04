@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             contextMenuStrip1 = new ContextMenuStrip(components);
             menuStrip1 = new MenuStrip();
             aRQUIVOToolStripMenuItem = new ToolStripMenuItem();
@@ -256,11 +257,12 @@
             Controls.Add(textBoxMarca);
             Controls.Add(dataGridViewCarros);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Carros";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCarros).EndInit();
